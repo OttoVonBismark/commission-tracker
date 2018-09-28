@@ -1,0 +1,228 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+/* This sheet styles all the other (custom) sheets. Rules defined here may be overridden as needed. */
+
+/* EDIT ME! I come from Boggy Go Fast and need to be more distinct! This is here just so I can have some decent formatting during early app development. */
+
+/* Mixins, Variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Universal */
+
+body {
+    padding-top: 60px;
+    color: white;
+    background-color: #141414;
+}
+
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.center {
+    text-align: center;
+    h1 {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Typography */
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+}
+
+h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: $gray-light;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+}
+
+
+/* Header */
+
+#logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+    &:hover {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+
+/* Forms */
+
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+}
+
+input {
+    height: auto !important;
+}
+
+select {
+    color: black;
+}
+
+// .run-time {
+    
+// }
+
+#error_explanation {
+    color: red;
+    ul {
+        color: red;
+        margin: 0 0 30px 0;
+    }
+}
+
+.field_with_errors {
+    @extend .has-error;
+    .form-control {
+        color: $state-danger-text;
+    }
+}
+
+.checkbox {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    span {
+        margin-left: 20px;
+        font-weight: normal;
+    }
+}
+
+#session_remember_me {
+    width: auto;
+    margin-left: 0px;
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid $gray-medium-light;
+    color: $gray-light;
+    a {
+        color: $gray;
+        &:hover {
+            color: $gray-darker;
+        }
+    }
+    small {
+        float: left;
+    }
+    ul {
+        float: right;
+        list-style: none;
+        li {
+            float: left;
+            margin-left: 15px;
+        }
+    }
+}
+
+
+/* Users index */
+
+.users, .games {
+	list-style: none;
+	margin: 0;
+	li {
+		overflow: auto;
+		padding: 10px 0;
+		border-bottom: 1px solid $gray-lighter;
+	}
+}
+
+
+/* Miscellaneous */
+
+.debug_dump {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 45px;
+    @include box_sizing;
+}
+
+/* Run Table Defaults */
+.tableZone {
+    background: #121212;
+    border-radius: 7px;
+
+    h4 {
+        font-weight: bolder;
+    }
+
+    table {
+        border-top-style: double;
+        border-right-style: double;
+        border-bottom-style: double;
+        border-left-style: double;
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+    }
+    th {
+        color: #333;
+        background-color: #CCC;
+        /*border: thin solid #000;*/
+    }
+    td {
+        color: #CCC;
+        background-color: #333;
+        border: thin solid #000;
+        width: fit-content;
+        padding: 7px;
+    }
+
+    .tableHead {
+        font-weight: bold;
+        td{
+            background: #171717;
+        }
+    }
+}
