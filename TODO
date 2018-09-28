@@ -1,0 +1,4 @@
+Inspect tests and integrate missing features.
+Unstub/enable said tests.
+Finish up Customer model, adding whatever features weren't included in the tests.
+Plan out the Job model.

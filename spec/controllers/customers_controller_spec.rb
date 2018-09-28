@@ -29,11 +29,11 @@ RSpec.describe CustomersController, type: :controller do
   # Customer. As you add validations to Customer, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {name: "John Doe", email: "user@example.org"}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {name: "", email: ""}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -97,14 +97,15 @@ RSpec.describe CustomersController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {name: "Jane Doberman", email: "user1@example.com"}
       }
 
       it "updates the requested customer" do
         customer = Customer.create! valid_attributes
         put :update, params: {id: customer.to_param, customer: new_attributes}, session: valid_session
         customer.reload
-        skip("Add assertions for updated state")
+        expect(customer.name).to eq "Jane Doberman"
+        expect(customer.email).to eq "user1@example.com"
       end
 
       it "redirects to the customer" do
