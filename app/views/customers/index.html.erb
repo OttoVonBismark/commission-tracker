@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Customers</h1>
+<h3 align="center">Customers</h3>
 
 <table>
   <thead>
@@ -12,8 +12,8 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%= link_to customer.name, customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to customer.name, customer %> |</td>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %> |</td>
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
