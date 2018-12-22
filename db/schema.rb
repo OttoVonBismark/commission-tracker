@@ -15,15 +15,15 @@ ActiveRecord::Schema.define(version: 2018_12_14_153924) do
   create_table "commissions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "name_id"
-    t.datetime "date_commissioned", null: false
+    t.integer "customer_id"
+    t.date "date_commissioned", null: false
     t.float "price", null: false
     t.text "details", null: false
     t.boolean "has_paid", default: false
-    t.datetime "date_paid"
+    t.date "date_paid"
     t.boolean "is_finished", default: false
-    t.datetime "date_finished"
-    t.index ["name_id"], name: "index_commissions_on_name_id"
+    t.date "date_finished"
+    t.index ["customer_id"], name: "index_commissions_on_customer_id"
   end
 
   create_table "customers", force: :cascade do |t|
