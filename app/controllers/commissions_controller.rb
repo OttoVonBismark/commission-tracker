@@ -52,6 +52,6 @@ class CommissionsController < ApplicationController
 
     # Keep your dirty spoofed parameters to yourself!
     def commissions_params
-        params.require(:commission).permit(:name_id, :date_commissioned, :price, :details, :has_paid, :date_paid, :is_finished, :date_finished)
+        params.require(:commission).permit(:customer_id, :date_commissioned, :price, :details, :has_paid, :date_paid, :is_finished, :date_finished)
     end
 end

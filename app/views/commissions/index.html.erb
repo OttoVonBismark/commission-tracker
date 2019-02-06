@@ -2,22 +2,28 @@
 
 <h3 align='center'>Commissions</h3>
 
-<table>
+<table class="commissions">
     <thead>
         <tr>
-            <th colspam="3"></th>
+            <th>JobID </th>
+            <th>Customer Name </th>
+            <th>Price </th>
+            <th>Details </th>
+            <th>Date Commissioned </th>
+            <th>Paid? </th>
+            <th>Finished?</th>
         </tr>
     </thead>
 
     <tbody>
         <% @commissions.each do |commission| %>
             <tr>
-                <td><%= commission.id %> |</td>
-                <td>This is where the name will go |</td>
-                <td><%= commission.price %> |</td>
-                <td><%= commission.details %> |</td>
-                <td><%= commission.date_commissioned %> |</td>
-                <td><%= commission.has_paid %> |</td>
+                <td><%= commission.id %></td>
+                <td><%= commission.customer.name %></td>
+                <td><%= commission.price %></td>
+                <td><%= commission.details %></td>
+                <td><%= commission.date_commissioned %></td>
+                <td><%= commission.has_paid %></td>
                 <td><%= commission.is_finished %></td>
             </tr>
         <% end %>
