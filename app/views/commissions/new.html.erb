@@ -3,7 +3,7 @@
 <%= form_for(@commission) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
 
-    <%= f.hidden_field :customer_id, value: params[:customer_id]%>
+    <%= f.hidden_field :customer_id, :value => params[:customer_id] %>
 
     <%= f.label :date_commissioned, "Date Commissioned" %>
     <%= f.date_field :date_commissioned, class: 'form-control' %>

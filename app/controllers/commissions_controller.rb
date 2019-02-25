@@ -17,7 +17,9 @@ class CommissionsController < ApplicationController
     end
     
     def create
-        @commission = @customer.commissions.new(commissions_params)
+        @commission = @customer.commissions.build(commissions_params)
+        
+        byebug
         
         respond_to do |format|
             if @commission.save
